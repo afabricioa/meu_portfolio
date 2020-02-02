@@ -1,11 +1,14 @@
 @import url(https://fonts.googleapis.com/css?family=Nunito);
+html {
+  scroll-behavior: smooth !important;
+}
+
 * {
   margin: 0;
   padding: 0;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   font-family: 'Nunito', sans-serif;
-  overflow: hidden;
 }
 
 a {
@@ -15,10 +18,6 @@ a {
 
 ul {
   list-style: none;
-}
-
-body {
-  color: black;
 }
 
 nav {
@@ -44,13 +43,14 @@ nav ul li {
 }
 
 main {
-  background-color: yellow;
-  margin-top: 4%;
   width: 100%;
   height: 100vh;
+  z-index: 1;
 }
 
 main #welcome-section {
+  background-image: -webkit-gradient(linear, left top, left bottom, from(black), to(gray));
+  background-image: linear-gradient(black, gray);
   height: 100vh;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -64,7 +64,25 @@ main #welcome-section {
 }
 
 main #welcome-section h1 {
+  color: white;
   text-align: center;
   display: block;
+  font-size: 60px;
+  width: 50%;
+}
+
+main #projects {
+  background-color: blue;
+  color: white;
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 /*# sourceMappingURL=main.css.map */
