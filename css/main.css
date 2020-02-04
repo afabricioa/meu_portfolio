@@ -40,6 +40,32 @@ nav ul {
 nav ul li {
   padding: 15px 40px;
   font-size: 20px;
+  -webkit-transform: translateX(100rem);
+          transform: translateX(100rem);
+  -webkit-animation: slideIn .5s forwards;
+          animation: slideIn .5s forwards;
+}
+
+nav ul li:nth-child(1) {
+  -webkit-animation-delay: 0s;
+          animation-delay: 0s;
+}
+
+nav ul li:nth-child(2) {
+  -webkit-animation-delay: .5s;
+          animation-delay: .5s;
+}
+
+nav ul li:nth-child(3) {
+  -webkit-animation-delay: 1s;
+          animation-delay: 1s;
+}
+
+nav a:hover {
+  color: orange;
+  border-bottom: 2px solid crimson;
+  -webkit-transition: 0.75s;
+  transition: 0.75s;
 }
 
 main {
@@ -49,8 +75,8 @@ main {
 }
 
 main #welcome-section {
-  background-image: -webkit-gradient(linear, left top, left bottom, from(black), to(gray));
-  background-image: linear-gradient(black, gray);
+  background-image: -webkit-gradient(linear, left top, left bottom, from(black), to(#5e5b5b));
+  background-image: linear-gradient(black, #5e5b5b);
   height: 100vh;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -58,6 +84,10 @@ main #welcome-section {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -71,8 +101,47 @@ main #welcome-section h1 {
   width: 50%;
 }
 
+main #welcome-section #info {
+  text-align: center;
+  width: 75px;
+  height: 40px;
+  border-radius: 5px;
+  padding: 5px 0;
+  font-size: 20px;
+  font-weight: bold;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#00aeff), to(#6bffc6));
+  background-image: linear-gradient(#00aeff, #6bffc6);
+  border: none;
+  -webkit-transition: 1s;
+  transition: 1s;
+}
+
+main #welcome-section #info .tooltiptext {
+  visibility: hidden;
+}
+
+main #welcome-section #info:hover {
+  min-width: 250px;
+  height: 150px;
+  font-size: 16px;
+  border-radius: 5px;
+  bottom: 100%;
+  -webkit-transition: 1s;
+  transition: 1s;
+  padding: 10px;
+}
+
+main #welcome-section #info:hover #sobre {
+  display: none;
+}
+
+main #welcome-section #info:hover .tooltiptext {
+  visibility: visible;
+}
+
 main #projects {
-  background-color: blue;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#5e5b5b), to(#7babf3));
+  background-image: linear-gradient(#5e5b5b, #7babf3);
   color: white;
   height: 100vh;
   display: -webkit-box;
@@ -84,5 +153,34 @@ main #projects {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+}
+
+main .project-tile {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 5rem;
+  width: 100%;
+  background-color: red;
+  margin: 50px;
+}
+
+@-webkit-keyframes slideIn {
+  from {
+  }
+  to {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+}
+
+@keyframes slideIn {
+  from {
+  }
+  to {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
 }
 /*# sourceMappingURL=main.css.map */
