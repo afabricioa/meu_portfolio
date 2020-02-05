@@ -183,4 +183,22 @@ main .project-tile {
             transform: translateX(0);
   }
 }
+
+@media (max-width: 600px) {
+  nav {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  nav ul {
+    padding: 0;
+    float: none;
+  }
+  main #welcome-section h1 {
+    font-size: 30px;
+  }
+}
 /*# sourceMappingURL=main.css.map */
