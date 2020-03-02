@@ -61,10 +61,7 @@ nav{
     }
 }
 
-main{
-    width: 100%;
-    height: 100vh;
-    z-index: 1;
+
     #welcome-section{
         
         background-image: linear-gradient(black, rgb(94, 91, 91));
@@ -119,21 +116,109 @@ main{
     #projects{
         background-image: linear-gradient(rgb(94, 91, 91), rgb(123, 171, 243));
         color: white;
-        height: 100vh;
+        height: auto;
+        min-height: 100vh;
         display: flex;
         justify-content: center;
         align-items: center;
+
     }
 
     .project-tile{
         display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
-        grid-gap: 5rem;
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+        grid-gap: 4rem;
+        min-height: 100vh;
+        height: auto;
         width: 100%;
-        background-color: red;
-        margin: 50px;
+        max-width: 1280px;
+        margin: 5% auto;
+        padding: 0 40px;
+        
+
+        a{  
+            height: 80%;
+            background-color: rgb(31, 44, 63);
+            color: white;
+            border-radius: 10px;
+            padding-bottom: 20px;
+
+            img{
+                border-top-left-radius: 10px;
+                border-top-right-radius: 10px;
+                height: 80%;
+                width: 100%;
+                object-fit: cover;
+            }
+
+            p{
+                height: 50px;
+                display: block;
+                text-align: center;
+                font-size: 1rem;
+                padding: 1rem 0.5rem;
+            }
+        }
+        a:hover{
+            min-height: 80%;
+            p{
+                color: crimson;
+            }
+            
+            img{
+                display: none;
+            }
+
+            span{
+                display: flex;
+                padding: 1em;
+                font-size: 14px;
+                text-align: justify;
+            }
+        }
+        a span{
+            display: none;
+        }
+        a img{
+            display: flex;
+        }
     }
     
+
+#contato{
+    width: 100%;
+    height: 100vh;
+    z-index: 1;
+    text-align: center;
+    background-image: linear-gradient(rgb(123, 171, 243), rgb(94, 91, 91));
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    h1{
+        color: white;
+        border-bottom: 1px solid crimson;
+        text-align: center;
+        font-size: 40px;
+        padding-bottom: 10px;
+    }
+
+    a{
+        display: flex;
+        padding: 50px;
+        font-size: 30px;
+        transition: transform 0.3s ease-out;
+        transition: all .5s;
+        
+        i{
+            padding-right: 20px;
+            padding-top: 5px;
+        }
+    }
+    a:hover{
+        color: crimson;
+    }
 }
 
 @keyframes slideIn{
@@ -161,4 +246,26 @@ main{
             font-size: 30px;
         }
     }
+
+    #contato{
+        h1{
+            font-size: 20px;
+        }
+    }
+
+    .project-tile{
+        display: grid;
+        grid-template-columns: repeat(2, minmax(150px, 1fr));
+        grid-gap: 2rem;
+        height: 80vh;
+        width: 100%;
+        max-width: 600px;
+        margin: 10% auto;
+        padding: 0 40px;
+
+        a p{
+            font-size: 0.7rem;
+        }
+    }
 }
+
